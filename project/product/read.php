@@ -1,22 +1,22 @@
 <?php
-// required headers
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
  
-// database connection will be here
 
-// include database and object files
+
+
 include_once '../config/database.php';
 include_once '../objects/product.php';
  
-// instantiate database and product object
+
 $database = new Database();
 $db = $database->getConnection();
  
-// initialize object
+
 $product = new Product($db);
  
-// read products will be here
+
 
 // query products
 $stmt = $product->read();
@@ -41,13 +41,11 @@ if($num>0){
         $product_item=array(
             "id" => $id,
             "title" => $title,
-            "ISBN" => $ISBN,
-            "category" => $category,
+            "isbn" => $isbn,
             "author_id" => $author_id,
             "publisher_id" => $publisher_id,
+            "category" => $category,
             "pages" => $pages
-            
-
         );
  
         array_push($products_arr["records"], $product_item);

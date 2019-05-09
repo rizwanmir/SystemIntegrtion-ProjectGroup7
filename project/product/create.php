@@ -21,26 +21,24 @@ $product = new Product($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // make sure data is not empty
-if( 
+if(
     !empty($data->title) &&
-    !empty($data->ISBN) &&
-    
+    !empty($data->isbn) &&
     !empty($data->author_id) &&
     !empty($data->publisher_id) &&
     !empty($data->category) &&
     !empty($data->pages) 
-
+    
 ){
  
     // set product property values
-    
     $product->title = $data->title;
-    $product->ISBN = $data->ISBN;
-    
+    $product->isbn = $data->isbn;
     $product->author_id = $data->author_id;
     $product->publisher_id = $data->publisher_id;
     $product->category = $data->category;
     $product->pages = $data->pages;
+    
  
     // create the product
     if($product->create()){

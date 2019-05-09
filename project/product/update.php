@@ -25,11 +25,12 @@ $product->id = $data->id;
  
 // set product property values
 $product->title = $data->title;
-$product->ISBN = $data->ISBN;
+$product->isbn = $data->isbn;
 $product->author_id = $data->author_id;
 $product->publisher_id = $data->publisher_id;
 $product->category = $data->category;
-$product->pages = $data->pages;
+$product->pages= $data->pages;
+
  
 // update the product
 if($product->update()){
