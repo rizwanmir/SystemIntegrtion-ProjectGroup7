@@ -8,47 +8,43 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/product.php';
+include_once '../objects/authors.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
-$product = new Product($db);
+// prepare books object
+$authors = new Authors($db);
  
-// get id of product to be edited
+// get id of books to be edited
 $data = json_decode(file_get_contents("php://input"));
  
-// set ID property of product to be edited
-$product->id = $data->id;
+// set ID property of books to be edited
+$authors->id = $data->id;
  
-// set product property values
-$product->title = $data->title;
-$product->isbn = $data->isbn;
-$product->author_id = $data->author_id;
-$product->publisher_id = $data->publisher_id;
-$product->category = $data->category;
-$product->pages= $data->pages;
-
+// set books property values
+$authors->first_name = $data->first_name;
+$authors->last_name = $data->last_name;
+$authors->place_of_birth = $data->place_of_birth;
  
-// update the product
-if($product->update()){
+// update the books
+if($authors->update()){
  
     // set response code - 200 ok
     http_response_code(200);
  
     // tell the user
-    echo json_encode(array("message" => "Product was updated."));
+    echo json_encode(array("message" => "Authors was updated."));
 }
  
-// if unable to update the product, tell the user
+// if unable to update the books, tell the user
 else{
  
     // set response code - 503 service unavailable
     http_response_code(503);
  
     // tell the user
-    echo json_encode(array("message" => "Unable to update product."));
+    echo json_encode(array("message" => "Unable to update Authors."));
 }
 ?>
