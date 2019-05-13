@@ -1,23 +1,19 @@
 <?php
 include_once './Config/database.php';
 include_once './Objects/api.php';
-
 $database = new Database();
 $db = $database->getConnection();
  
 $api = new Api($db);
-
 if(isset($_POST['submit'])) {
      
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-    $apikey = uniqid (rand(), true);
-
+    $apikey = uniqid();
     if($api->create($email, $apikey)) {
         echo "Your API key is: $apikey";
     } else {
         echo "Something went wrong";
     }
-
 }
 ?>
 
@@ -39,4 +35,4 @@ if(isset($_POST['submit'])) {
             </form>
         </div>
         </body>
-</html>
+</html> 

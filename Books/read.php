@@ -1,14 +1,24 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
- 
 include_once '../config/database.php';
 include_once '../objects/books.php';
- 
+
 $database = new Database();
 $db = $database->getConnection();
- 
-$books = new Books($db);
+$valid_user = false;
+if (isset($_GET['apikey'])) {
+    // Check if apikey is valid.
+
+    $apikey = $_GET['apikey'];
+    $sql = 'SELECT * FROM api WHERE apikey = :apikey';
+    $statement = $db->prepare($sql);
+    $statement->bindValue(':apikey', $apikey, PDO::PARAM_STR);
+    $data = $statement->execute();
+    if ($data = $statement->fetch()) {
+        // Apikey is valid.
+        $valid_user = true;
+        $_SESSION['apikey'] = $apikey;
+        echo json_encode(array("message" => "it works."));
+        $books = new Books($db);
  
 // query bookss
 $stmt = $books->read();
@@ -60,3 +70,14 @@ else{
         array("message" => "No bookss found.")
     );
 }
+        
+    }
+
+}
+if (!$valid_user) {
+    http_response_code(401);
+    echo json_encode(array("message" => "You need a Key."));
+    exit;
+}
+
+?>
