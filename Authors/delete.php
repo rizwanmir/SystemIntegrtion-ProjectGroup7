@@ -20,13 +20,13 @@ if (isset($_GET['apikey'])) {
         echo json_encode(array("message" => "it works."));
         $authors = new Authors($db);
  
-// get books id
+// get authors id
 $data = json_decode(file_get_contents("php://input"));
  
-// set books id to be deleted
+// set authors id to be deleted
 $authors->id = $data->id;
  
-// delete the books
+// delete the authors
 if($authors->delete()){
  
     // set response code - 200 ok
@@ -36,7 +36,7 @@ if($authors->delete()){
     echo json_encode(array("message" => "Author was deleted."));
 }
  
-// if unable to delete the books
+// if unable to delete the authors
 else{
  
     // set response code - 503 service unavailable

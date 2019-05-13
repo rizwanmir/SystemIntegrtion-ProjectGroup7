@@ -34,10 +34,7 @@ if($authors->first_name!=null){
  
     );
  
-    
     http_response_code(200);
- 
-    
     echo json_encode($authors_arr);
 }
  

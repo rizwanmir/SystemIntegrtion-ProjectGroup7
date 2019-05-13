@@ -20,11 +20,7 @@ if (isset($_GET['apikey'])) {
         echo json_encode(array("message" => "it works."));
       //  include_once '../config/database.php';
  
-// instantiate books object
-// include_once '../objects/authors.php';
- 
-// $database = new Database();
-// $db = $database->getConnection();
+// instantiate authors object
  
 $authors = new Authors($db);
  
