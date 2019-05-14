@@ -17,13 +17,11 @@ class Authors{
     public $last_name;
     public $place_of_birth;
     
-    
- 
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
     }
-    // read books
+    // read authors
     function read(){
  
         // select all query
@@ -37,7 +35,7 @@ class Authors{
      
         return $stmt;
     }
-// create books
+// create authors
 function create(){
  
     // query to insert record
@@ -50,19 +48,15 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize 
-    
     $this->first_name=htmlspecialchars(strip_tags($this->first_name));
     $this->last_name=htmlspecialchars(strip_tags($this->last_name));
     $this->place_of_birth=htmlspecialchars(strip_tags($this->place_of_birth));
     
- 
     // bind values
     $stmt->bindParam(":first_name", $this->first_name);
     $stmt->bindParam(":last_name", $this->last_name);
     $stmt->bindParam(":place_of_birth", $this->place_of_birth);
    
-    
- 
     // execute query
     if($stmt->execute()){
         return true;
@@ -71,9 +65,8 @@ function create(){
     return false;
      
 }
-// used when filling up the update books form
+// used when filling up the update authors form
 function readOne(){
- 
     // query to read single record
     $query = "SELECT * FROM authors
             WHERE
@@ -84,7 +77,7 @@ function readOne(){
     // prepare query statement
     $stmt = $this->conn->prepare( $query );
  
-    // bind id of books to be updated
+    // bind id of authors to be updated
     $stmt->bindParam(1, $this->id);
  
     // execute query
@@ -99,7 +92,7 @@ function readOne(){
     $this->place_of_birth = $row['place_of_birth'];
     
 }
-// update the books
+// update the authors
 function update(){
  
     // update query
@@ -124,7 +117,6 @@ function update(){
     $stmt->bindParam(":place_of_birth", $this->place_of_birth);
     $stmt->bindParam(":id", $this->id);
 
- 
     // execute the query
     if($stmt->execute()){
         return true;
@@ -132,7 +124,7 @@ function update(){
  
     return false;
 }
-// delete the books
+// delete the authors
 function delete(){
  
     // delete query
@@ -156,3 +148,4 @@ function delete(){
      
 }
 }
+?>

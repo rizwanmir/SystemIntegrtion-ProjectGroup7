@@ -16,10 +16,5 @@ die();
     echo "user was NOT found";
 
 }
-    
-
-
-
-
 
 ?>

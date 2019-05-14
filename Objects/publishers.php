@@ -19,13 +19,11 @@ class Publishers{
     public $publisher;
     public $location;
     
-    
- 
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
     }
-    // read books
+    // read publishers
     function read(){
  
         // select all query
@@ -39,7 +37,7 @@ class Publishers{
      
         return $stmt;
     }
-// create books
+// create publishers
 function create(){
  
     // query to insert record
@@ -52,19 +50,13 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize 
-    
     $this->publisher=htmlspecialchars(strip_tags($this->publisher));
     $this->location=htmlspecialchars(strip_tags($this->location));
     
-    
- 
     // bind values
     $stmt->bindParam(":publisher", $this->publisher);
     $stmt->bindParam(":location", $this->location);
     
-   
-    
- 
     // execute query
     if($stmt->execute()){
         return true;
@@ -73,7 +65,7 @@ function create(){
     return false;
      
 }
-// used when filling up the update books form
+// used when filling up the update publishers form
 function readOne(){
  
     // query to read single record
@@ -86,7 +78,7 @@ function readOne(){
     // prepare query statement
     $stmt = $this->conn->prepare( $query );
  
-    // bind id of books to be updated
+    // bind id of publishers to be updated
     $stmt->bindParam(1, $this->id);
  
     // execute query
@@ -101,7 +93,7 @@ function readOne(){
     
     
 }
-// update the books
+// update the publisher
 function update(){
  
     // update query
@@ -124,7 +116,6 @@ function update(){
     $stmt->bindParam(":location", $this->location);
     $stmt->bindParam(":id", $this->id);
 
- 
     // execute the query
     if($stmt->execute()){
         return true;
@@ -132,7 +123,7 @@ function update(){
  
     return false;
 }
-// delete the books
+// delete the publisher
 function delete(){
  
     // delete query
@@ -156,3 +147,4 @@ function delete(){
      
 }
 }
+?>

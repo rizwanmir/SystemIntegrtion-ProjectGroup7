@@ -20,17 +20,17 @@ if (isset($_GET['apikey'])) {
         echo json_encode(array("message" => "it works."));
         $publishers = new Publishers($db);
  
-// get id of books to be edited
+// get id of publishers to be edited
 $data = json_decode(file_get_contents("php://input"));
  
-// set ID property of books to be edited
+// set ID property of publishers to be edited
 $publishers->id = $data->id;
  
-// set books property values
+// set publishers property values
 $publishers->publisher = $data->publisher;
 $publishers->location = $data->location;
  
-// update the books
+// update the publishers
 if($publishers->update()){
  
     // set response code - 200 ok

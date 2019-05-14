@@ -17,8 +17,6 @@ class Books{
     public $last_name;
     public $place_of_birth;
     
-    
- 
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
@@ -177,3 +175,4 @@ function delete(){
      
 }
 }
+?>

@@ -53,3 +53,4 @@ if (!$valid_user) {
     echo json_encode(array("message" => "You need a Key."));
     exit;
 }
+?>

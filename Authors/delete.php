@@ -26,7 +26,7 @@ $data = json_decode(file_get_contents("php://input"));
 // set authors id to be deleted
 $authors->id = $data->id;
  
-// delete the authors
+// delete the author
 if($authors->delete()){
  
     // set response code - 200 ok
@@ -36,7 +36,7 @@ if($authors->delete()){
     echo json_encode(array("message" => "Author was deleted."));
 }
  
-// if unable to delete the authors
+// if unable to delete the author
 else{
  
     // set response code - 503 service unavailable
@@ -53,3 +53,4 @@ if (!$valid_user) {
     echo json_encode(array("message" => "You need a Key."));
     exit;
 }
+?>

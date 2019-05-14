@@ -35,14 +35,12 @@ if(
     
 ){
  
-    // set books property values
+    // set authors property values
     $authors->first_name = $data->first_name;
     $authors->last_name = $data->last_name;
     $authors->place_of_birth = $data->place_of_birth;
     
-    
- 
-    // create the books
+    // create the authors
     if($authors->create()){
  
         // set response code - 201 created
@@ -52,7 +50,7 @@ if(
         echo json_encode(array("message" => "Author was created."));
     }
  
-    // if unable to create the books, tell the user
+    // if unable to create the authors, tell the user
     else{
  
         // set response code - 503 service unavailable
@@ -80,3 +78,4 @@ if (!$valid_user) {
     echo json_encode(array("message" => "You need a Key."));
     exit;
 }
+?>

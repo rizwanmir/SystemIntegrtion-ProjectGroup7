@@ -16,9 +16,6 @@ class User {
     public $lastName;
     public $password;
     
-
-
-
     function __construct() {
         
         $this->email =  $_POST['email'] ?? '';

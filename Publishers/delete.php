@@ -23,10 +23,10 @@ if (isset($_GET['apikey'])) {
 // get books id
 $data = json_decode(file_get_contents("php://input"));
  
-// set books id to be deleted
+// set publishers id to be deleted
 $publishers->id = $data->id;
  
-// delete the books
+// delete the publishers
 if($publishers->delete()){
  
     // set response code - 200 ok
@@ -36,7 +36,7 @@ if($publishers->delete()){
     echo json_encode(array("message" => "Publisher was deleted."));
 }
  
-// if unable to delete the books
+// if unable to delete the publishers
 else{
  
     // set response code - 503 service unavailable

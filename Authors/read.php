@@ -20,14 +20,13 @@ if (isset($_GET['apikey'])) {
         echo json_encode(array("message" => "it works."));
         $authors = new Authors($db);
  
-// query bookss
 $stmt = $authors->read();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
  
-    // bookss array
+    // authors array
     $authors_arr=array();
     $authors_arr["records"]=array();
  
@@ -49,7 +48,7 @@ if($num>0){
     // set response code - 200 OK
     http_response_code(200);
  
-    // show bookss data in json format
+    // show authors data in json format
     echo json_encode($authors_arr);
 }
  
@@ -58,7 +57,7 @@ else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user no bookss found
+    // tell the user no auhors found
     echo json_encode(
         array("message" => "No authors found.")
     );
@@ -71,3 +70,4 @@ if (!$valid_user) {
     echo json_encode(array("message" => "You need a Key."));
     exit;
 }
+?>
