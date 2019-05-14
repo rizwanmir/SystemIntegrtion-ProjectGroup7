@@ -4,19 +4,18 @@ include_once './Objects/api.php';
 $database = new Database();
 $db = $database->getConnection();
  
-$api = new Api($db);
 if(isset($_POST['submit'])) {
+    $api = new Api($db);
      
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
     $apikey = uniqid();
-    if($api->create($email, $apikey)) {
+ //   if($api->create($email, $apikey)) {
         $msg  = "<div id='apikey'>";
         $msg .= "Your API key is: $apikey";
         $msg .= "</div>";
-    } else {
-        echo "Something went wrong";
-    }
-}
+        $api->insertApiKey($email, $apikey);
+    } 
+
 ?>
 <!DOCTYPE HTML>
 <html>
