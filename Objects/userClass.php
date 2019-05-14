@@ -5,7 +5,7 @@
 // for each, which is used in login process.
 
 
-include('config/database.php');
+include_once '../config/database.php';
 $database = new Database;
 $db = $database->getConnection();
 
