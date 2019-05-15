@@ -36,24 +36,18 @@ if($books->title!=null){
         "pages" => $books->pages
  
     );
- 
-    
-    http_response_code(200);
- 
-    
+   
+    http_response_code(200);  
     echo json_encode($books_arr);
 }
  
 else{
     
-    http_response_code(404);
- 
-    
+    http_response_code(404);  
     echo json_encode(array("message" => "books does not exist."));
 }
         
     }
-
 }
 if (!$valid_user) {
     http_response_code(401);

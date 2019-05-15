@@ -1,7 +1,7 @@
 <?php
 class Database{
  
-    // specify your own database credentials
+    // specify database credentials
     private $host = "localhost";
     private $db_name = "test";
     private $username = "root";

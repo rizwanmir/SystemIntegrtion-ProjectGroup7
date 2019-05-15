@@ -30,14 +30,11 @@ if(
     
 ){
  
-    // set books property values
+    // set publishers property values
     $publishers->publisher = $data->publisher;
     $publishers->location = $data->location;
     
-    
-    
- 
-    // create the books
+    // create the publishers
     if($publishers->create()){
  
         // set response code - 201 created

@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "a2f318ad-af81-4c3f-8f23-67bc0ea5df5f",
+		"name": "Group7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Books/read.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Books/read.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Books",
+						"read.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Books/read-one.php?id=30",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Books/read-one.php?id=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Books",
+						"read-one.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "30"
+						}
+					]
+				},
+				"description": "Books read-one"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Books/create.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \n        \"title\": \"Harry Poter\",\n        \"isbn\": \"47587584\",\n        \"author_id\": \"1\",\n        \"publisher_id\": \"2\",\n        \"category\": \"Adventure\",\n        \"pages\": \"300\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Books/create.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Books",
+						"create.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Books/update.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"29\",\n        \"title\": \"Book2\",\n        \"isbn\": \"47587584\",\n        \"author_id\": \"1\",\n        \"publisher_id\": \"2\",\n        \"category\": \"Adventure\",\n        \"pages\": \"300\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Books/update.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Books",
+						"update.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Books/delete.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"29\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Books/delete.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Books",
+						"delete.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Authors/read.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Authors/read.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Authors",
+						"read.php"
+					]
+				},
+				"description": "Books read"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Authors/read-one.php?id=7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Authors/read-one.php?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Authors",
+						"read-one.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				},
+				"description": "Author read-one"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Authors/update.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"1\",\n        \"first_name\": \"J.R.Roy\",\n        \"last_name\": \"Tolkien\",\n        \"place_of_birth\": \"Bloemfontein, Sydafrika\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Authors/update.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Authors",
+						"update.php"
+					]
+				},
+				"description": "Authors update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Authors/create.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \n        \"first_name\": \"Elf\",\n        \"last_name\": \"Shrek\",\n        \"place_of_birth\": \"Istanbul, Turkey\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Authors/create.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Authors",
+						"create.php"
+					]
+				},
+				"description": "Author create"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Authors/delete.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"7\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Authors/delete.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Authors",
+						"delete.php"
+					]
+				},
+				"description": "Author delete"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Publishers/read.php",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Publishers/read.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Publishers",
+						"read.php"
+					]
+				},
+				"description": "Publishers read"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Publishers/read-one.php?id=3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Publishers/read-one.php?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Publishers",
+						"read-one.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Publishers read-one"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Publishers/create.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \n        \"publisher\": \"Books publishers AB\",\n        \"location\": \"Stockholm\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Publishers/create.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Publishers",
+						"create.php"
+					]
+				},
+				"description": "Publishers create"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Publishers/update.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 3,\n        \"publisher\": \"DN publishers AB\",\n        \"location\": \"Stockholm\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Publishers/update.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Publishers",
+						"update.php"
+					]
+				},
+				"description": "Publishers update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/PHP/SystemIntegration/Project/Publishers/delete.php",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "18779202315cd80519c22f54.73516956",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"3\"\n        \n    }"
+				},
+				"url": {
+					"raw": "http://localhost/PHP/SystemIntegration/Project/Publishers/delete.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PHP",
+						"SystemIntegration",
+						"Project",
+						"Publishers",
+						"delete.php"
+					]
+				},
+				"description": "Publisher delete"
+			},
+			"response": []
+		}
+	]
+}

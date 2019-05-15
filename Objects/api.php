@@ -5,8 +5,6 @@ class Api {
         $this->conn = $db;
     }
     
-    
-
     public function insertApiKey($email, $apikey) {
         $id =  $this->conn->prepare("SELECT id FROM users WHERE email = :email");
         $id->bindValue(':email', $email, PDO::PARAM_STR);
@@ -40,10 +38,7 @@ class Api {
 
         } else {
             echo 'error';
-        }
-     
-        
-        
+        }     
     }
  } 
 ?>

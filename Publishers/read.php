@@ -20,24 +20,18 @@ if (isset($_GET['apikey'])) {
         echo json_encode(array("message" => "it works."));
         $publishers = new Publishers($db);
  
-// query bookss
 $stmt = $publishers->read();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
  
-    // bookss array
+    // publishers array
     $publishers_arr=array();
     $publishers_arr["records"]=array();
  
-    // retrieve our table contents
-    // fetch() is faster than fetchAll()
-    // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         // extract row
-        // this will make $row['name'] to
-        // just $name only
         extract($row);
  
         $publishers_item=array(
