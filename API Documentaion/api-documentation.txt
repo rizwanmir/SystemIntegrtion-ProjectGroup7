@@ -1,6 +1,6 @@
 Introduction:
 
-this is a documentation on Books API project which allows users to interact
+This is a documentation on Books API project which allows users to interact
 with our RESTful API, to do things like for instance Adding new book/s to our existed library
 , fetch a single book, fetch all books or update information on a single book
 users allowed also to do the same process as mentioned above, which means that 
@@ -10,20 +10,24 @@ they can interact with more than books, in other words, Authors and Publishers e
 Allowed HTTPs requests:
 
 the allowed headers in this project is four HTTPs Requests which are
-PUT     : To create resource 
-POST    : Update resource
+PUT     : Update resource
+POST    : To create resource 
 GET     : Get a resource or list of resources
 DELETE  : To delete resource
 
-Link till api:
+Link to the api:
 https://apicrudproject.000webhostapp.com/
+
+OBS 
+Register and login to get your api key. 
+
 
 Description Of Usual Server Responses:
 
 200 [OK] - the request was successful.
 201 [Created] - the request was successful and a resource was created.
 400 [Bad Request] - the request could not be understood or was missing required parameters.
-401 [Unauthorized] - authentication failed or user doesn't have permissions for requested operation.
+401 [Unauthorised] - authentication failed or user doesn't have permissions for requested operation.
 404 [Not Found] - resource was not found.
 503 [Service Unavailable] - The server cannot handle the request (because it is overloaded or down for maintenance). Generally, this is a temporary state.
 
@@ -35,63 +39,94 @@ This project has three main entities as mentioned earlier in the intro:
 
 --Books [Represents books details].
    -Books attributes:
-    1- Title (String).
-    2- ISBN (String).
-    3- Publishing date (year).
-    4- Category (String).
-    5- Number of pages (int).
+    1. id (int)
+    2- title (String).
+    3- isbn (String).
+    4- publisher_id (int).
+    5- category (String).
+    6- pages(int).
+    7. author_id (int).
 
 
 --Authors [Represents authors details].
    -Authors attributes:
-    1- First name (String).
-    2- Last name (String).
-    3- Place of birth (String).
+    1. id (int)
+    2- first_name (String).
+    3- last_name (String).
+    4- place_of_birth (String).
 
 
 --Publishers [Represents publishers details].
    -Publishers attributes:
-    1- Publisher name (String).
-    2- Location (String).
+    1. id
+    2- publisher(String).
+    3- location (String).
 
 
 
 Endpoints in the API:
 
-                                     ---------------------------------------Authors----------------------------------------
+                                     ---------------------------------------GET----------------------------------------
+
+Getting all rows from a table:
+Exp: https://apicrudproject.000webhostapp.com/Authors/read.php?apikey=Yourapikey
+
+Getting one row from Books table
+Exp: https://apicrudproject.000webhostapp.com/Books/read-one.php?id=15&apikey=Yourapikey
+
+Getting one row from Publishers table:
+Exp: https://apicrudproject.000webhostapp.com/Publishers/read-one.php?id=4&apikey=Yourapikey
 
 
-PUT/Authors/create.php/{first_name=[string], last_name=[string], place_of_birth=[string]}                                                    Adding an Author.
-GET/Authors/read.php/No url parameters required                                                                                              Reading all Authors.
-GET/Authors/read-one.php/{id=[integer]}                                                                                                      Reading Author by id.
-DELETE/Authors/delete.php/{id=[integer]}                                                                                                     Delete a Author by id.
-POST/Authors/update.php/{first_name=[string], last_name=[string], place_of_birth=[string],id=[integer]}                                      Update an Author.
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                      ---------------------------------------POST----------------------------------------
+
+To create Publishers, Books and Authors we use POST request
+Exp: 	http://localhost/PHP/SystemIntegration/Project/Publishers/create.php
+	http://localhost/PHP/SystemIntegration/Project/Books/create.php
+	http://localhost/PHP/SystemIntegration/Project/Authors/create.php
+
+Body
+
+Publisher tex: { “publisher” : “Books publisher Stockholm”, "location": "Stockholm North" }
+Books tex: { "title": "Book new", "isbn": "4758758434", "author_id": "1", "publisher_id": "2", "category": "Adventure", "pages": "300"}
+
+Authors tex: { "first_name": "Erik", "last_name": "Olssson", "place_of_birth": "Uppsala"}
 
 
-                                      ---------------------------------------Books----------------------------------------
 
 
-PUT/Books/create.php/{title=[string], ISBN=[string], category=[string], author_id=[integer], pages=[integer], publisher_id=[integer]}        Adding a Book.
-GET/Books/read.php/No url parameters required                                                                                                Reading all Books.
-GET/Books/read-one.php/{id=[integer]}                                                                                                        Reading a single Book by id.
-DELETE/Books/delete.php/{id=[integer]}                                                                                                       Delete a book.
-POST/Books/update.php/{title=[string], ISBN=[string], category=[string], author_id=[integer],publisher_id=[integer], pages=[integer]} 	     Update a book.
+				      ---------------------------------------PUT----------------------------------------
+
+Here you need an id for books, authors and publishers to update the table. For example for Books:
+http://localhost/PHP/SystemIntegration/Project/Books/update.php
+
+Body
+
+Books: {
+        "id": "29",
+        "title": "Change book name",
+        "isbn": "47587584",
+        "author_id": "1",
+        "publisher_id": "2",
+        "category": "Adventure",
+        "pages": "300"
+    }
 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ ---------------------------------------DELETE----------------------------------------
+
+Here same as POST and you need an id to delete the record. For example for Authors:
+http://localhost/PHP/SystemIntegration/Project/Authors/delete.php
+
+Body
+Authors: {"id": "7"}
 
 
-				      ---------------------------------------Publishers----------------------------------------
 
 
-PUT/Publishers/create.php/{publisher=[string], location=[string]}                                                                             Adding a publisher.
-GET/Publishers/read.php/No url parameters required 											      Reading all publishers.
-GET/Publishers/read-one.php/{id=[integer]}   												      Reading a single publisher by id.
-DELETE/Publishers/delete.php{id=[integer]}												      Delete a publisher.
-POST/Publishers/update.php/{id=[integer], publisher=[string], location=[string]}							      Update a book.
 
 
 
